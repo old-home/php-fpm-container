@@ -53,9 +53,5 @@ RUN apt-get remove -y wget \
     && apt-get upgrade -y \
   ;
 
-RUN chmod +x /usr/local/bin/entrypoint.sh \
-    && echo "xdebug.mode=coverage" >> /usr/local/etc/php/php.ini \
-  ;
-
 WORKDIR /app
 CMD ["php-fpm"]
