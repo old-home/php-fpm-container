@@ -1,7 +1,6 @@
 FROM php:8.4-fpm
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Install apt packages
 RUN set -x \
@@ -59,4 +58,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh \
   ;
 
 WORKDIR /app
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["php-fpm"]
