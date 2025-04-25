@@ -42,6 +42,7 @@ RUN docker-php-ext-install \
 RUN pecl install xdebug event \
     && pecl install ast && docker-php-ext-enable ast \
     && pecl install raphf && docker-php-ext-enable raphf \
+    && pecl install redis && docker-php-ext-enable redis \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-enable event --ini-name zz-event.ini \
     ;
